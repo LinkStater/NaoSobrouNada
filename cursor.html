@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagem segue o cursor</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #222;
+      cursor: none; /* esconde o cursor original (opcional) */
+    }
+
+    #cursorImg {
+      position: absolute;
+      width: 64px; /* tamanho da imagem */
+      pointer-events: none; /* evita bloquear cliques */
+      transform: translate(-50%, -50%); /* centraliza na posição do mouse */
+    }
+  </style>
+</head>
+<body>
+
+
+    
+  <img id="cursorImg" src="faca.png" alt="cursor" width="600px">
+
+  <img id="abacaxi" src="abacaxi.png" onclick="corte()" width="300px">
+  <img id="brerinjela" onclick="corte2()" src="bre.png" width="300px">
+
+  <script>
+
+function corte(){
+    document.getElementById("abacaxi").src = "abacaxi2.png";
+}
+
+function corte2(){
+    document.getElementById("brerinjela").src = "beringela.jpg";
+}
+
+
+
+principal();
+function principal(){
+
+    const cursorImg = document.getElementById("cursorImg");
+
+    document.addEventListener("mousemove", (e) => {
+      cursorImg.style.left = e.clientX + "px";
+      cursorImg.style.top = e.clientY + "px";
+    });
+
+}
+  
+  
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>

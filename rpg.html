@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto RPG</title>
+    <style>
+        body {
+            background: #222;
+            color: #fff;
+            font-family: monospace;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        #caixa {
+            border: 2px solid #fff;
+            padding: 15px;
+            width: 400px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="Undertale.gif" width="150px">
+    <div id="caixa"></div>
+
+    <button onclick="window.location.href='eduardo.html'">Ferias</button>
+
+    <button onclick="window.location.href='cursor.html'">Ferias</button>
+
+
+    <script>
+
+
+
+        const nome = localStorage.getItem("nomeJogador");
+
+
+        const texto = `Olá ${nome}... Bem-vindo à nossa aventura! Escolha uma abaixo:`;
+        const caixa = document.getElementById("caixa");
+        let i = 0;
+
+        function escrever() {
+            if (i < texto.length) {
+                caixa.innerHTML += texto.charAt(i);
+                i++;
+                setTimeout(escrever, 50); // velocidade (ms) - ajuste como quiser
+            }
+        }
+
+        escrever();
+    </script>
+</body>
+
+</html>

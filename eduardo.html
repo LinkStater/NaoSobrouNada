@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .linha {
+            padding-top: 10px;
+            display: flex;
+        }
+
+        img {
+            height: 300px;
+        }
+
+
+        * {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1> Ferias escolar </h1>
+
+    <h1 id="teste"></h1>
+
+
+
+    <p>certo dia dois jovens marcou de sair</p>
+
+    <img src="amigos.png">
+
+    <div class="linha">
+        <button onclick="parte()" style="width: 50%;">Caminhar a praia!</button>
+        <button onclick="parte3()" style="width: 50%;">ir ao cinema</button>
+    </div>
+
+
+
+    <script>
+
+
+        function carregar() {
+            const nome = localStorage.getItem("nomeJogador");
+            document.getElementById("teste").innerText = "Olá, " + nome;
+        }
+
+        carregar();
+
+
+    </script>
+
+
+
+</body>
+
+
+
+
+
+</html>

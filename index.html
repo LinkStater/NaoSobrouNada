@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Persistência com localStorage</title>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>Olá Jogador, digite seu nome</h1>
+
+    <input id="nome" type="text" placeholder="Digite seu nome">
+    <button onclick="salvar()">Salvar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function salvar() {
+            const nome = document.getElementById("nome").value;
+            localStorage.setItem("nomeJogador", nome); // chave, valor
+            alert("Nome salvo!");
+
+window.location.href = "rpg.html"
+
+        }
+
+        function carregar() {
+            const nome = localStorage.getItem("nomeJogador");
+            document.getElementById("resultado").textContent =
+                nome ? "Nome carregado: " + nome : "Nenhum nome salvo!";
+        }
+    </script>
+</body>
+
+</html>
